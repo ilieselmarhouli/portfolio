@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.profil{
+  text-align: center;
+  color: #511985;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 80%;
+  background-color: #12192c;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-profil h3{
+  border: linear-gradient(#e6648f, #4a117c);
+  max-width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+.text-profil h3 p{
+  padding: 1rem;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #12192c;
+  padding: 20px;
+  text-align: center;
+}
+header nav a {
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  font-style: oblique;
+}
+header nav a:hover,
+header nav a.active {
+  background: black;
+  color: white;
+  transition: 0.5s ease-out;
+  letter-spacing: 2px;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home{
+  background-image: url("3.png");
+  background-size: cover;
+  color: white;
+}
+#services {
+  background-image: url("2.png");
+  background-size: cover;
+  color: white;
+}
+a{
+  color: white;
+  background-image: url("2.png");
+  border-radius: 10px;
+}
+#contact{
+  background-image: url("5.png");
+  background-size: cover;
+  color: white;
+}
+section .container {
+  margin: 100px;
+}
+section h1 {
+  font-size: 3rem;
+  margin: 20px;
+}
+section h2 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+section .text-container {
+  display: flex;
+}
+section .text-container .text-box {
+  margin: 20px;
+  padding: 20px;
+  background: black;
+  text-align: center;
+}
+section .text-container .text-box h3 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#about{
+  background-image: url("unknown4.png");
+  background-size: cover;
+}
+@media (max-width: 900px) {
+  section h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container {
+    flex-direction: column;
+  }
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border: 0;
+  background: var(--clr-secondary);
+  color: var(--clr-light);
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.game {
+  position: relative;
+  width: 12rem;
+}
+
+.streamers {
+  display: flex;
+  text-align: center;
+}
+.streamers img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.front {
+  transition: 200ms;
+}
+.front > img {
+  border-radius: 12px;
+}
+.front .name {
+  margin: 0.75em 0;
+}
+.front .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.front .streamers img {
+  border: 1px solid var(--clr-dark);
+}
+.front .streamers img:nth-child(1) {
+  z-index: 1;
+  transform: translateX(15px);
+}
+.front .streamers img:nth-child(2) {
+  transform: translateX(10px);
+}
+
+.back {
+  position: absolute;
+  top: 56%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.back .streaming-info {
+  columns: 2;
+  column-rule: 1px solid rgba(255, 255, 255, 0.6);
+}
+.back .game-stat {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.back .game-stat span {
+  display: block;
+  font-size: 0.8rem;
+}
+.back .streamers {
+  display: flex;
+}
+
+.backgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #24282a;
+  z-index: -1;
+  transform: scale(0.2, 0.8);
+  opacity: 0;
+  border-radius: 12px;
+}
+
+.game:hover .front {
+  transform: translateY(-25%) scale(0.8);
+}
+.game:hover .front .name {
+  animation: gameName 150ms forwards;
+}
+.game:hover .front .status {
+  opacity: 0;
+}
+.game:hover .back {
+  opacity: 1;
+}
+.game:hover .back .streamers {
+  width: 100%;
+  justify-content: space-between;
+}
+.game:hover .back .streamer {
+  font-size: 0.9rem;
+}
+.game:hover .back .name {
+  font-weight: bold;
+}
+.game:hover .rank {
+  top: -35px;
+  right: -30px;
+}
+.game:hover .backgroundWrapper {
+  transition: transform 200ms ease-in-out, opacity 100ms linear;
+  opacity: 1;
+  transform: scale(1.4, 1.2);
+}
+
+.rank {
+  position: absolute;
+  right: 15px;
+  font-weight: bold;
+  font-size: 1.12rem;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0.5em 0.5em;
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
+  transition: 250ms ease-in-out;
+}
+
+@keyframes gameName {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+  }
+}
